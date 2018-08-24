@@ -1,6 +1,6 @@
 ---
 version: v1.0
-name: YAML file example for Go project
+name: Building semaphore2test
 agent:
   machine:
     type: e1-standard-2
@@ -16,7 +16,7 @@ blocks:
         - name: Prepare testing environment
           commands:
             - bundle install --deployment --jobs $(nproc)
-            - yarn install --production
+            - yarn install
             - bundle exec rake db:setup
             - bundle exec rake webpacker:compile
       prologue:
