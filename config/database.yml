@@ -7,12 +7,12 @@ default: &default
 
 development:
   <<: *default
-  url: <%= ENV.fetch("DATABASE_URL", "postgres://localhost:5433/semaphore2test_development" } %>
+  url: <%= ENV.fetch("DATABASE_URL", "postgres://localhost:5433/semaphore2test_development") %>
 
 test:
   <<: *default
-  url: <%= ENV.fetch("DATABASE_URL", "postgres://localhost:5433/semaphore2test_test" } %>
+  url: <%= ENV.fetch("DATABASE_URL", "postgres://localhost:5433/semaphore2test_test") %>
 
 production:
   <<: *default
-  url: <%= ENV.fetch("DATABASE_URL", "postgres://localhost:5433/semaphore2test_production" } %>
+  url: <%= ENV.fetch("DATABASE_URL", "postgres://localhost:5433/semaphore2test_production") %>
