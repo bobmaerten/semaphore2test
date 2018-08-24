@@ -19,6 +19,11 @@ blocks:
             - yarn install
             - bundle exec rake db:setup
             - bundle exec rake webpacker:compile
+         env_vars:    
+           - name: RACK_ENV
+             value: test
+           - name: RAILS_ENV
+             value: test
       prologue:
         commands:
           - checkout
