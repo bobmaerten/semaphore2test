@@ -10,6 +10,9 @@ blocks:
   - name: Prepare test suite
     task:
       jobs:
+        - name: Setup depedancies
+          command:
+            - install-package graphicsmagick
         - name: Prepare testing environment
           commands:
             - bundle install --deployment --jobs $(nproc)
@@ -18,7 +21,7 @@ blocks:
             - bundle exec rake webpacker:compile
       prologue:
         commands:
-          - install-package graphicsmagick
+          - checkout
   - name: Execute test suite
     task:
       jobs:
