@@ -11,7 +11,7 @@ blocks:
     task:
       jobs:
         - name: Setup depedancies
-          command:
+          commands:
             - install-package graphicsmagick
         - name: Prepare testing environment
           commands:
