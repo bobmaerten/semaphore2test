@@ -22,12 +22,7 @@ blocks:
       prologue:
         commands:
           - checkout
-  - name: Execute test suite
-    task:
-      jobs:
-        - name: Run test suite
-          commands:
-            - bundle exec rake test
-      env_vars:    
+          - install-package graphicsmagick
+      env_vars:
         - name: RAILS_ENV
           value: test
