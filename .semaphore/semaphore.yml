@@ -1,0 +1,27 @@
+---
+version: v1.0
+name: YAML file example for Go project
+agent:
+  machine:
+    type: e1-standard-2
+    os_image: ubuntu1804
+
+blocks:
+  - name: Prepare test suite
+    task:
+      jobs:
+        - name: Prepare testing environment
+          commands:
+            - bundle install --deployment --jobs $(nproc)
+            - bundle exec rake db:setup
+            - yarn install --production
+            - bundle exec rake webpacker:compile
+      prologue:
+        commands:
+          - install-package graphicsmagick
+  - name: Execute test suite
+    task:
+      jobs:
+        - name: Run test suite
+          commands:
+            - bundle exec rake test

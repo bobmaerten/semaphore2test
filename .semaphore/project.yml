@@ -1,0 +1,7 @@
+apiVersion: v1alpha
+kind: Project
+metadata:
+  name: semaphore2test
+spec:
+  repository:
+    url: "git@github.com:bobmaerten/semaphore2test.git"
