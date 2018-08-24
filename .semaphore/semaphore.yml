@@ -17,7 +17,7 @@ blocks:
           commands:
             - bundle install --deployment --jobs $(nproc)
             - yarn install
-            - bundle exec rake db:setup
+            # - bundle exec rake db:setup
             - bundle exec rake webpacker:compile
       prologue:
         commands:
